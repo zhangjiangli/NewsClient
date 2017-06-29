@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <item android:icon="@drawable/selector_bg_tab01"
-            android:id="@+id/menu01"
+        <item
+            android:id="@+id/setting01"
             android:title="HAAH"></item>
-        <item android:icon="@drawable/selector_bg_tab01"
-            android:id="@+id/menu02"
-            android:title="HAAH"></item>
-        <item android:icon="@drawable/selector_bg_tab01"
-            android:id="@+id/menu03"
-            android:title="HAAH"></item>
-        <item android:icon="@drawable/selector_bg_tab01"
-            android:id="@+id/menu04"
+        <item
+            android:id="@+id/setting02"
             android:title="HAAH"></item>
 </menu>

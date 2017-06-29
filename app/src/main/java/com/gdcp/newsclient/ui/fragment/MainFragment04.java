@@ -1,5 +1,7 @@
 package com.gdcp.newsclient.ui.fragment;
 
+import com.gdcp.newsclient.R;
+
 /**
  * Created by asus- on 2017/6/27.
  */
@@ -7,7 +9,7 @@ package com.gdcp.newsclient.ui.fragment;
 public class MainFragment04 extends BaseFragment{
     @Override
     public int getLayoutRes() {
-        return 0;
+        return R.layout.fragment_main04;
     }
 
     @Override

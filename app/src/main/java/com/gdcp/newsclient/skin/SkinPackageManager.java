@@ -11,6 +11,8 @@ import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.os.AsyncTask;
 
+import com.gdcp.newsclient.skin.config.SkinConfig;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -30,12 +32,17 @@ public class SkinPackageManager {
     //当前资源包名
     private String packageName;
     //皮肤资源
-    private Resources resources;
+    private Resources mResources;
     private SkinPackageManager(Context context){
         this.context=context;
     }
 
-   public static  SkinPackageManager getInstance(Context context){
+
+    public Resources getResources() {
+        return mResources;
+    }
+
+    public static  SkinPackageManager getInstance(Context context){
         if (mInstance==null){
             synchronized (SkinPackageManager.class){
                 if (mInstance==null){
@@ -103,11 +110,11 @@ public boolean copyApkFromAssets(Context context,String fileName,String path){
                            // 得到资源实例
                            Resources superRes=context.getResources();
                            // 实例化皮肤资源
-                           Resources resources=new Resources(assetManager,superRes.getDisplayMetrics(),
+                           Resources skinResource =new Resources(assetManager,superRes.getDisplayMetrics(),
                                    superRes.getConfiguration());
                            // 保存资源路径
-                           skincon
-
+                           SkinConfig.getInstance(context).setSkinResourcePath(dexPath_tmp);
+                           return skinResource;
 
                        } catch (InstantiationException e) {
                            e.printStackTrace();
@@ -130,6 +137,14 @@ public boolean copyApkFromAssets(Context context,String fileName,String path){
                @Override
                protected void onPostExecute(Resources resources) {
                    super.onPostExecute(resources);
+                   mResources=resources;
+                   if (loadSkinCallBack!=null){
+                       if (mInstance!=null){
+                              loadSkinCallBack.loadSkinSuccess();
+                       }else {
+                           loadSkinCallBack.loadSkinFail();
+                       }
+                   }
                }
            }.execute(dexPath);
     }

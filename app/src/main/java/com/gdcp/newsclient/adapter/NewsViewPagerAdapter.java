@@ -11,9 +11,11 @@ import java.util.List;
 
 public class NewsViewPagerAdapter extends FragmentPagerAdapter{
     private List<Fragment>fragmentList;
-    public NewsViewPagerAdapter(FragmentManager fm, List<Fragment>fragmentList) {
+    private List<String>titleList;
+    public NewsViewPagerAdapter(FragmentManager fm, List<Fragment>fragmentList,List<String>titleList) {
         super(fm);
         this.fragmentList=fragmentList;
+        this.titleList=titleList;
     }
 
     @Override
@@ -28,6 +30,7 @@ public class NewsViewPagerAdapter extends FragmentPagerAdapter{
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return super.getPageTitle(position);
+
+        return titleList.get(position);
     }
 }

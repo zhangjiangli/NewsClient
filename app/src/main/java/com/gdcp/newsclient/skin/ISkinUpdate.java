@@ -5,4 +5,5 @@ package com.gdcp.newsclient.skin;
  */
 
 public interface ISkinUpdate {
+    public void updateTheme();
 }
