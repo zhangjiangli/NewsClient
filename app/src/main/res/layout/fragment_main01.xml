@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.gdcp.newsclient.ui.activity.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </android.support.v4.view.ViewPager>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ff33">
+    </View>
+
+    <RadioGroup
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/tab_01"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_bg_tab01"
+            android:gravity="center"
+            android:text="新闻"
+            android:textColor="@drawable/selector_color_tab"
+            android:checked="true"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/tab_02"
+            android:layout_width="0dp"
+            android:textColor="@drawable/selector_color_tab"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_bg_tab02"
+            android:gravity="center"
+            android:text="视听"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/tab_03"
+            android:layout_width="0dp"
+            android:textColor="@drawable/selector_color_tab"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/selector_bg_tab03"
+            android:text="阅读"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/tab_04"
+            android:textColor="@drawable/selector_color_tab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/selector_bg_tab04"
+            android:text="发现"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/tab_05"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_bg_tab05"
+            android:text="设置"
+            android:textColor="@drawable/selector_color_tab"
+            android:gravity="center"
+            android:textSize="12sp" />
+
+    </RadioGroup>
+</LinearLayout>
